@@ -8,10 +8,12 @@
         <title>To Do List</title>
     </head>
     <body>
-        <h1>To Do List</h1>
-        <div id="List">
-            <input type="text" id="to-do" name="to-do">
-            <button type="button" onclick="add()">Add</button>
+        <div id="list" class="list">
+            <h1>To Do List</h1>
+            <div id="input">
+                <input type="text" id="to-do" name="to-do" class="input-box" placeholder="Add a new task...">
+                <button type="button" id="add" class="button" onclick="add()">Add</button>
+            </div>
             <p id="message"></p>
             <ul id="to-do-list"></ul>
         </div>
