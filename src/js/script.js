@@ -1,9 +1,3 @@
-// add subheadings for different tasks
-// fix pressing enter button on edit input box where node is not child
-// align the checkbox and text to the left
-// align delete and edit buttons to the right
-// might change input to be a form
-
 // adding a new task
 function add(storageText='', completed=false) {
     // error message to user
