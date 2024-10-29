@@ -50,7 +50,7 @@ h1 {
 }
 
 #list-content {
-    display: grid;
+    display: flex;
     color: white;
     font-size: 18px;
     margin: 0px 5px;
@@ -63,6 +63,7 @@ h1 {
 
 #delete-button {
     margin: 0px 5px;
+    margin-left: auto;
 }
 
 #change {
@@ -96,4 +97,3 @@ h1 {
 .checkbox {
     margin: 0px 5px;
 }
-
