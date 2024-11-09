@@ -6,22 +6,38 @@ body {
     background: #e1b382; /*Sand Tan*/
     height: 100vh;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-h1 {
+h1.list {
     font-size: 50px;
     color: white;
     text-align: center;
+    min-width: 230px;
     position: relative;
     background-color: #2d545e; /*Night Blue*/
 }
 
+a.user-login {
+    font-size: 23px;
+    color: white;
+    margin-top: -90px;
+    margin-right: 10px;
+    padding: 5px;
+    float: right;
+    background-color: #2d545e;
+    border-radius: 6px;
+    border-color: #2d545e;
+    text-decoration: none;
+}
+
+a.user-login:hover {
+    background-color: #1c343a;
+}
+
 #list {
     padding: 20px 60px;
-    margin: 100px 250px;
+    margin: 100px 350px;
+    min-width: 200px;
     background: #2d545e;
     border-radius: 6px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

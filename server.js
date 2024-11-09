@@ -10,7 +10,8 @@ app.use(express.static(path.join(__dirname + '/public')));
 app.use((req, res, next) => {
     res.status(404);
     res.send(`<h1>Error 404: Resource not found</h1>`);
-    console.log('Time: ', Date.now());
+    let time = new Date();
+    console.log('404 Not Found Time: ', time.toLocaleString("en-US"));
     next();
 });
 
