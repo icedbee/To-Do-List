@@ -17,20 +17,32 @@ h1.list {
     background-color: #2d545e; /*Night Blue*/
 }
 
-a.user-login {
-    font-size: 23px;
-    color: white;
-    margin-top: -90px;
-    margin-right: 10px;
-    padding: 5px;
-    float: right;
-    background-color: #2d545e;
-    border-radius: 6px;
-    border-color: #2d545e;
+.user-actions {
     text-decoration: none;
 }
 
-a.user-login:hover {
+a.user-login, a.user-register{
+    font-size: 23px;
+    color: white;
+    text-decoration: none;
+    float: right;
+    padding: 5px;
+    background-color: #2d545e;
+    border-radius: 6px;
+    border-color: #2d545e;
+}
+
+a.user-login {
+    margin-top: -90px;
+    margin-right: 105px;
+}
+
+a.user-register {
+    margin-top: -90px;
+    margin-right: 10px;
+}
+
+a.user-login:hover, a.user-register:hover {
     background-color: #1c343a;
 }
 
