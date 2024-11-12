@@ -37,24 +37,30 @@ app.get("/", (req, res) => {
 
 app.get("/register", (req, res) => {
     console.log("register")
-    res.render("register")
+    res.render("register", {
+        message: ''
+    })
 })
 
 app.get("/login", (req, res) => {
     console.log("login")
-    res.render("login")
+    res.render("login", {
+        message: ''
+    })
 })
 
 app.use(express.urlencoded({extended: 'false'}))
 app.use(express.json())
 
-/*
 app.post("/auth/register", (req, res) => {
     const { name, email, password, password_confirm } = req.body
+    // Testing purposes
+    /*
     console.log(name)
     console.log(email)
     console.log(password)
     console.log(password_confirm)
+    */
 
     db.query('SELECT email FROM users WHERE email = ?', [email], async (error, result) => {
         if(error) {
@@ -87,7 +93,40 @@ app.post("/auth/register", (req, res) => {
             }
         })
     })
-})*/
+})
+
+app.post("/auth/login", async (req, res) => {
+    const { name, password } = req.body
+    
+    db.query('SELECT password FROM users WHERE email=?', [name], async (error, results, fields) => {
+        if(error) {
+            console.log(error)
+        }
+        else if(results.length > 1) {
+            console.log('Something is wrong')
+        }
+        console.log(results)
+
+        await bcrypt.compare(password, results[0].password, (err, resu) => {
+            if(err) {
+                console.log(err)
+            }
+            else {
+                console.log(resu)
+                if(resu) {
+                    return res.render('login', {
+                        message: 'User logged in!'
+                    })
+                }
+                else {
+                    return res.render('login', {
+                        message: 'Not a valid name or password'
+                    })
+                }
+            }
+        })
+    })
+})
 
 /*
 app.use((req, res, next) => {
@@ -96,7 +135,8 @@ app.use((req, res, next) => {
     let time = new Date();
     console.log('404 Not Found Time: ', time.toLocaleString("en-US"));
     next();
-});*/
+});
+*/
 
 app.listen(port, () => {
     console.log(`App is listening on port ${port}.`)

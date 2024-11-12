@@ -8,6 +8,26 @@
         <title>To Do List</title>
     </head>
     <body>
-        <h1>You made it the login page!</h1>
+        <div class="container mt-4">
+            <div class="card">
+                <h1>Login</h1>
+                <form action="/auth/login" method="POST">
+                    <div class="mb-3">
+                        <label for="email-lgn" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email-lgn" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password-lgn" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password-lgn" name="password">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <% if(message) { %>
+                <h4><%= message %></h4>
+            <% }; %>
+        </div>    
     </body>
 </html>
