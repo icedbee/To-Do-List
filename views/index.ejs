@@ -9,8 +9,13 @@
     </head>
     <body>
         <div id="user-actions" class="user-actions">
-            <a class="user-login" href="/login">Login</a>
-            <a class="user-register" href="/register">Register</a>
+            <% if(isAuthenticated) { %>
+                <a class="user-login" href="/account"><%= name %></a>
+                <a class="user-register" href="/logout">Logout</a>
+            <% } else { %>
+                <a class="user-login" href="/login">Login</a>
+                <a class="user-register" href="/register">Register</a>
+            <% }; %>
         </div>
         <div id="list" class="list">
             <h1 class="list">To Do List</h1>
@@ -22,5 +27,8 @@
             <ul id="to-do-list"></ul>
         </div>
         <script src="/js/index.js"></script>
+        <% if(message) { %>
+            <h4><%= message %></h4>
+        <% }; %>
     </body>
 </html>
